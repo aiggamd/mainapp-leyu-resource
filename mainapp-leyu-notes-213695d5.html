@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>乐鱼 · 运动视野</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fce6cf 0%, #f8d5b0 50%, #f0c092 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1.2rem;
+      line-height: 1.7;
+    }
+
+    .magazine-wrapper {
+      max-width: 980px;
+      width: 100%;
+    }
+
+    .card {
+      background: #fffffffa;
+      backdrop-filter: blur(4px);
+      border-radius: 40px 40px 28px 28px;
+      box-shadow: 0 20px 45px rgba(150, 90, 30, 0.18), 0 6px 12px rgba(0,0,0,0.03);
+      padding: 2.5rem 2.2rem;
+      transition: box-shadow 0.25s;
+    }
+
+    /* 顶部横幅 —— 杂志开篇 */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 2.2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #f1daca;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: #eae0d3;
+      color: #6a4d36;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 350;
+      color: #2b1d12;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 span {
+      font-weight: 500;
+      background: linear-gradient(135deg, #a5572b, #c07a48);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 600px;
+      font-size: 1.1rem;
+      color: #5d4636;
+      margin: 0.6rem auto 0;
+    }
+
+    /* 背景说明 */
+    .background-note {
+      background: #fdf5ef;
+      border-left: 5px solid #ca8e62;
+      border-radius: 0 24px 24px 0;
+      padding: 1.3rem 1.8rem;
+      margin: 1.6rem 0 2.2rem;
+      font-size: 0.98rem;
+      color: #3d2f26;
+    }
+
+    .background-note strong {
+      color: #8e5b38;
+      font-weight: 600;
+    }
+
+    /* 三段自然介绍（杂志风格） */
+    .story-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin: 2.2rem 0 2rem;
+    }
+
+    .story-item {
+      border-bottom: 1px dashed #e5cebb;
+      padding-bottom: 1.4rem;
+    }
+
+    .story-item:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .story-item h3 {
+      font-size: 1.25rem;
+      font-weight: 420;
+      color: #5c3b25;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.3px;
+    }
+
+    .story-item h3 i {
+      display: inline-block;
+      margin-right: 8px;
+      font-style: normal;
+      background: #daae8a;
+      color: white;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      text-align: center;
+      border-radius: 50%;
+      font-size: 0.9rem;
+    }
+
+    .story-item p {
+      color: #4f3a2b;
+      font-size: 0.98rem;
+      margin-left: 38px;
+    }
+
+    /* 提示卡片（页尾） */
+    .visit-hint {
+      margin-top: 2.6rem;
+      text-align: center;
+      background: #f7ede4;
+      border-radius: 60px;
+      padding: 1.7rem 0.8rem;
+      box-shadow: inset 0 1px 4px rgba(255,255,255,0.7), 0 8px 18px rgba(120, 70, 30, 0.08);
+    }
+
+    .visit-hint p {
+      font-size: 1.02rem;
+      color: #3f3023;
+      margin-bottom: 0.5rem;
+    }
+
+    .visit-hint .link-wrap {
+      display: inline-block;
+      background: #ffffff;
+      padding: 0.45rem 1.8rem;
+      border-radius: 60px;
+      box-shadow: 0 2px 8px rgba(128, 82, 42, 0.10);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+
+    .visit-hint .link-wrap a {
+      text-decoration: none;
+      font-weight: 540;
+      font-size: 1.1rem;
+      color: #7b5233;
+      letter-spacing: 0.3px;
+      display: inline-block;
+      padding: 0.2rem 0;
+    }
+
+    .visit-hint .link-wrap:hover {
+      background: #f3e5d8;
+      box-shadow: 0 3px 12px rgba(158, 95, 46, 0.15);
+    }
+
+    .faq-mini {
+      margin-top: 2.5rem;
+      padding-top: 1.6rem;
+      border-top: 2px solid #edd9c9;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.8rem;
+      font-size: 0.9rem;
+    }
+
+    .faq-mini div {
+      color: #634c38;
+    }
+
+    .faq-mini span {
+      font-weight: 600;
+      color: #4b3424;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      .card {
+        padding: 1.8rem 1.2rem;
+        border-radius: 28px 28px 20px 20px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .story-item p {
+        margin-left: 0;
+        margin-top: 8px;
+      }
+
+      .story-item h3 i {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 0.8rem;
+      }
+
+      .faq-mini {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .visit-hint {
+        padding: 1.4rem 0.5rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+    }
+
+    /* 小点缀 */
+    .quiet {
+      color: #866b54;
+    }
+  </style>
+</head>
+<body>
+<div class="magazine-wrapper">
+  <div class="card">
+
+    <!-- 首页横幅 -->
+    <div class="hero">
+      <div class="hero-tag">专题 · 运动生活</div>
+      <h1>视野<span>·</span> 乐鱼体育</h1>
+      <p>一个以运动内容与信息服务为主的线上平台，让更多人快速找到自己关注的体育世界。</p>
+    </div>
+
+    <!-- 背景说明 -->
+    <div class="background-note">
+      <strong>关于这个平台</strong> —— 乐鱼体育是一个聚合体育资讯、赛事情报与运动文化的数字空间。它没有繁复的入口，而是试图用直观的内容分类帮助访客发现感兴趣的运动维度。无论你习惯在桌面还是移动设备上浏览，界面都保持同样的克制与清晰。
+    </div>
+
+    <!-- 三段自然介绍：从用户快速识别用途切入 -->
+    <div class="story-grid">
+      <div class="story-item">
+        <h3><i>1</i> 一眼辨识内容方向</h3>
+        <p>进入网站，首先看到的是按运动类型组织的卡片区。从足球、篮球到网球、电竞，每类都配有简洁的标题与近期摘要。用户不必翻阅多层菜单，就能判断这里是否提供自己关心的信息。</p>
+      </div>
+      <div class="story-item">
+        <h3><i>2</i> 轻量化的浏览节奏</h3>
+        <p>页面采用留白与柔和分隔，避免信息过载。每个模块都围绕一个运动主题展开，配合中性克制的用语，让阅读体验更接近杂志而非信息流。对于想快速了解体育动态的人来说，这种节奏更容易保持专注。</p>
+      </div>
+      <div class="story-item">
+        <h3><i>3</i> 从场景出发的设计</h3>
+        <p>不论是在通勤间隙看一眼比赛结果，还是晚上安静地浏览深度盘点，<strong>乐鱼体育</strong> 的版式都试图适配不同场景。字体、对比度、按钮区域都经过基础无障碍考量，让体育内容真正回归到“人”的使用习惯。</p>
+      </div>
+    </div>
+
+    <!-- 页尾访问提示（自然嵌入链接） -->
+    <div class="visit-hint">
+      <p>如果你对体育内容有持续的兴趣，可以前往 <span class="link-wrap"><a href="https://mainapp-leyu.com.cn">乐鱼体育</a></span> 了解更多。</p>
+      <p style="margin-top: 0.6rem; font-size: 0.9rem;" class="quiet">页面结构轻简 · 按运动分类 · 信息一目了然</p>
+    </div>
+
+    <!-- FAQ 摘要风格（简洁） -->
+    <div class="faq-mini">
+      <div><span>常见问题</span><br>内容多久更新？—— 随赛季及热点保持节奏</div>
+      <div><span>访问方式</span><br>直接使用浏览器，无需额外配置</div>
+      <div><span>内容倾向</span><br>资讯与背景阅读并重，不过度渲染</div>
+    </div>
+
+    <!-- 非常低调的脚注 (仅风格) -->
+    <div style="margin-top: 2rem; text-align: center; font-size: 0.75rem; color: #b18f75; border-top: 1px solid #eedfd1; padding-top: 1.2rem;">
+      <span>运动 · 视野 · 连接</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>
