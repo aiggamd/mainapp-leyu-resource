@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>500万网彩票 · 简明指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fbd9b3 0%, #f8d2a5 40%, #f5c48c 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .page-card {
+      max-width: 820px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 48px 48px 32px 32px;
+      box-shadow: 0 20px 40px -12px rgba(160, 90, 30, 0.25);
+      overflow: hidden;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #ffd9b0, #ffc48a);
+      padding: 2.8rem 2.5rem 2.4rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #3a2413;
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero .sub {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(2px);
+      padding: 0.3rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.95rem;
+      color: #4f321a;
+      font-weight: 500;
+      margin-top: 0.6rem;
+    }
+
+    .content-inner {
+      padding: 2.5rem 2.5rem 2.2rem;
+    }
+
+    .intro-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .section-item {
+      border-left: 4px solid #f3bc7a;
+      padding-left: 1.2rem;
+    }
+
+    .section-item h2 {
+      font-size: 1.5rem;
+      font-weight: 550;
+      color: #3d2b18;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.3px;
+    }
+
+    .section-item p {
+      color: #3c2e1d;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .highlight-link {
+      display: inline-block;
+      background: #fae3cb;
+      padding: 0.2rem 0.5rem;
+      border-radius: 12px;
+      font-weight: 500;
+      color: #573d21;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    .highlight-link:hover {
+      background: #f5cfaa;
+      transform: scale(1.02);
+    }
+
+    .tip-card {
+      background: #fef6ec;
+      border-radius: 28px;
+      padding: 1.5rem 1.8rem;
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem 0.8rem;
+      border: 1px solid #f0dabc;
+    }
+
+    .tip-card span {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #51381b;
+    }
+
+    .btn-soft {
+      display: inline-flex;
+      align-items: center;
+      background: #dfb587;
+      color: #2d1e0d;
+      font-weight: 550;
+      font-size: 1rem;
+      padding: 0.5rem 1.6rem;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.15s;
+      box-shadow: 0 4px 8px rgba(170, 100, 40, 0.10);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-soft:hover {
+      background: #d4a16f;
+      box-shadow: 0 6px 14px rgba(160, 85, 30, 0.20);
+    }
+
+    .faq-mini {
+      margin-top: 2.2rem;
+      background: #fbf5ec;
+      border-radius: 24px;
+      padding: 1.5rem 1.8rem;
+    }
+
+    .faq-mini h3 {
+      font-size: 1.2rem;
+      font-weight: 550;
+      color: #493419;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .faq-item {
+      margin-bottom: 0.7rem;
+      border-bottom: 1px dashed #e2cfb5;
+      padding-bottom: 0.6rem;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .faq-q {
+      font-weight: 550;
+      color: #3c2b14;
+    }
+
+    .faq-a {
+      color: #4f3a20;
+      margin-top: 0.2rem;
+      font-size: 0.95rem;
+    }
+
+    .footer-note {
+      margin-top: 1.8rem;
+      text-align: center;
+      color: #6d5438;
+      font-size: 0.9rem;
+      border-top: 1px solid #eddccb;
+      padding-top: 1.4rem;
+    }
+
+    .footer-note a {
+      color: #6d3f15;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 500;
+    }
+
+    a {
+      color: #6d3f15;
+      text-decoration: 1px underline #dbaa7a;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 550px) {
+      .hero {
+        padding: 2rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .content-inner {
+        padding: 1.8rem 1.2rem 1.5rem;
+      }
+      .section-item h2 {
+        font-size: 1.25rem;
+      }
+      .tip-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.2rem;
+      }
+      .btn-soft {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-card">
+    <div class="hero">
+      <h1>500万网彩票 · 简明指南</h1>
+      <div class="sub">信息整理 · 理性参考</div>
+    </div>
+
+    <div class="content-inner">
+      <div class="intro-block">
+        <div class="section-item">
+          <h2>从零了解</h2>
+          <p>
+            “500万网彩票”是围绕彩票信息整理而建立的平台，聚合了玩法介绍、术语说明以及部分开奖数据参考。对于希望系统了解彩票规则的新手来说，它提供了一个较为清晰的入口。平台本身不提供购彩通道，重点在于信息展示与知识梳理。
+          </p>
+        </div>
+
+        <div class="section-item">
+          <h2>内容侧重与场景</h2>
+          <p>
+            网站内容涵盖数字彩、竞猜型以及即开型等主流彩票类型的基础说明。页面设计以信息导读为主，方便查阅不同彩种的玩法结构。如果你正在整理或对比不同彩票的规则，<a href="https://guess-500.com" class="highlight-link">500万网彩票</a>的汇总方式能够节省一些检索时间。每个彩种页面都附有基础术语解释，适合作为初期的参考工具。
+          </p>
+        </div>
+
+        <div class="section-item">
+          <h2>访问提醒与习惯</h2>
+          <p>
+            使用任何彩票信息类网站时，建议保持专注、不沉迷，仅将平台信息作为了解工具。适当设置浏览时间，避免频繁刷新开奖数据。同时注意保护个人隐私，不要在任何非官方页面输入敏感信息。<a href="https://guess-500.com" class="highlight-link">500万网彩票</a>本身不收集用户数据，但仍建议使用后清除临时浏览记录。
+          </p>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <span>📌 快速检索</span>
+        <a href="https://guess-500.com" class="btn-soft">500万网彩票</a>
+        <span style="font-size:0.9rem; color:#5f4629;">· 可做信息参考起点</span>
+      </div>
+
+      <div class="faq-mini">
+        <h3>❓ 常见疑问摘要</h3>
+
+        <div class="faq-item">
+          <div class="faq-q">Q：该平台是否提供购彩服务？</div>
+          <div class="faq-a">不提供。该网站专注于规则说明、术语表和部分历史数据展示，无交易功能。</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Q：为什么要关注多个彩种的介绍？</div>
+          <div class="faq-a">不同彩票的返奖机制、玩法逻辑差异较大，集中参考能帮你更快建立整体认知。</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Q：数据更新频率如何？</div>
+          <div class="faq-a">网站不定期维护，建议以官方彩票机构公布的信息为准，这里仅作辅助阅读。</div>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        <p>整理自公开资料 · 不构成任何投资或购买建议 · 适度参考</p>
+        <p style="margin-top:0.3rem;">
+          ➤ 更多说明可浏览 <a href="https://guess-500.com">500万网彩票</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
